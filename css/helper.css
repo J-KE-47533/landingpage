@@ -61,7 +61,7 @@ iframe {
   cursor: pointer;
   text-align: left;
   border-radius: 20px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 0.8em;
   transition: 0.3s;
 }
@@ -76,7 +76,7 @@ iframe {
   position: absolute;
   right: 1rem;
   transition: transform 0.3s ease;
-  width: 1.4rem;
+  width: 1.5rem;
   height: 1rem;
   background-size: contain;
   background-repeat: no-repeat;
@@ -89,8 +89,6 @@ iframe {
     /* overflow: hidden; Verhindert, dass der Inhalt sichtbar wird */
     transition: 0.3s ease; /* Übergang für max-height und opacity */
     margin-top: 10px; /* optional, um Platz zu schaffen */
-    position: relative;
-    z-index: 999999;
   }
   
   .collapser-content.open {
@@ -107,7 +105,7 @@ iframe {
 
 
   .collapser-btn {
-    font-size: 24px;
+    font-size: 18px;
     width: unset;
   }
 
@@ -115,14 +113,18 @@ iframe {
     right: 1.8rem;
     width: 1.8rem;
   }
-
-
 }
 
 @media screen and (min-width: 992px) {
 
+
+}
+
+
+@media screen and (min-width: 992px) {
+
   .collapser-btn {
-    width: unset;
+    font-size: 20px;
   }
 
 }

@@ -149,13 +149,90 @@ select {
     font-size: 16px;
     box-sizing: border-box;
     line-height: 1em;
+    cursor: pointer;
 }
 
 select:hover, select:focus, select:checked {
     color: var(--bg-color);
     background-color: var(--bg-color-light);
 }
+button:not(.remove-item), .btn {
+    padding: var(--base-padding);
+    border: 1px solid var(--accent-color);
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    border-radius: 10px;
+    font-family: 'Baloo Bhai 2';
+    font-weight: 700;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
+.button-container button:hover, .btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 4rem;
+    width: calc(67% + 3.8rem);
+    margin: auto;
+}
+
+#section-7 .button-container {
+    width: 100%;
+}
+
+.btn-back, .btn-next, .btn-submit {
+    position: relative;
+    padding: 1.2rem 1.6rem !important;
+    margin: 0;
+}
+
+.btn-back span, .btn-next span, .btn-submit span {
+    display: none;
+}
+
+.btn-next::before, .btn-back::before, .btn-submit::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 8px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.btn-back::before {
+    background-image: url(../images/icons/btn-back.svg);
+}
+
+.btn-back:hover:before {
+    background-image: url(../images/icons/btn-back-hover.svg);
+}
+
+.btn-next::before {
+    background-image: url(../images/icons/btn-next.svg);
+}
+
+.btn-submit::before {
+    background-image: url(../images/icons/btn-next-hover.svg);
+}
+
+.btn-next:hover:before {
+    background-image: url(../images/icons/btn-next-hover.svg);
+}
+
+.btn-submit:hover::before {
+    background-image: url(../images/icons/btn-next.svg);
+}
 
 /* Small */
 
@@ -225,6 +302,36 @@ select:hover, select:focus, select:checked {
 
     .pfeile {
         display: flex !important;
+    }
+
+    .button-container {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .btn-back, .btn-next, .btn-submit {
+        padding: 0.7rem 1.3rem !important;
+    }
+
+    .btn-back span, .btn-next span, .btn-submit span {
+        display: block;
+    }
+
+    .btn-next span, .btn-submit span {
+        margin-right: 2.2rem;
+    }
+
+    .btn-next::before, .btn-submit::before {
+        right: 1.2em;
+        left: unset;
+        width: 9px;
+        height: 24px;
+    }
+
+    .btn-back::before {
+        content: none;
     }
 }
 
@@ -314,6 +421,7 @@ select:hover, select:focus, select:checked {
     .date-input {
         min-height: 61.6px;
     }
+
 }
 
 @media screen and (max-width: 1363px) {

@@ -29,6 +29,10 @@ form {
     padding: 0;
 }
 
+input::placeholder {
+    color: var(--text-color);
+}
+
 input {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -50,30 +54,6 @@ input[type="checkbox"] {
 
 label {
     font-weight: 300;
-}
-
-button:not(.remove-item), .btn {
-    padding: var(--base-padding);
-    border: 1px solid var(--accent-color);
-    background-color: var(--bg-color);
-    color: var(--accent-color);
-    border-radius: 10px;
-    font-family: 'Baloo Bhai 2';
-    font-weight: 700;
-    font-size: 24px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.button-container button:hover, .btn:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-}
-
-.button-container {
-    display: flex;
-    justify-content: flex-end;
-    padding-bottom: 4rem;
 }
 
 .h2-section {
@@ -165,6 +145,7 @@ button:not(.remove-item), .btn {
 
 input[type="date"] {
     color: var(--text-color);
+    min-height: 61.6px !important;
 }
 
 .datenschutz {
@@ -317,6 +298,7 @@ input[type="checkbox"]:not([id="datenschutz"]) {
   .btn-submit {
     background-color: var(--accent-color) !important;
     color: var(--bg-color) !important;
+    font-size: 16px !important;
   }
 
   .btn-submit:hover {
@@ -391,7 +373,7 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     border-color: #FFA07A;
 }
 
-#section-2 select:hover {
+#section-2 select:hover, #section-2 select:focus, #section-2 select:checked {
     color: var(--bg-color);
     background-color: #FFA07A;
 }
@@ -433,7 +415,7 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     border-color: var(--accent-color);
 }
 
-#section-3 select:hover {
+#section-3 select:hover, select:focus, select:checked {
     color: var(--bg-color);
     background-color: var(--accent-color);
 }
@@ -474,7 +456,7 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     border-color: var(--main-color);
 }
 
-#section-4 select:hover {
+#section-4 select:hover, #section--4select:focus, #section-4 select:checked {
     color: var(--bg-color);
     background-color: var(--main-color);
 }
@@ -516,7 +498,7 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     border-color: #9DA977;
 }
 
-#section-5 select:hover {
+#section-5 select:hover, #section-5 select:focus, #section-5 select:checked {
     color: var(--bg-color);
     background-color: #9DA977;
 }
@@ -557,7 +539,7 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     border-color: #c4bc98;
 }
 
-#section-6 select:hover {
+#section-6 select:hover, #section-6 select:focus, #section-6 select:checked {
     color: var(--bg-color);
     background-color: #c4bc98;
 }
@@ -606,3 +588,16 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     background: #8B5E3C; /* Farbe beim Hover */
 }
 
+
+
+@media screen and (min-width:760px) {
+    .btn-submit, .btn-next, .btn-back {
+        font-size: 18px !important;
+      }
+}
+
+@media screen and (min-width:1200px) {
+    .btn-submit, .btn-next, .btn-back {
+        font-size: 24px !important;
+      }
+}
