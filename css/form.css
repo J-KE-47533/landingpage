@@ -31,6 +31,17 @@ form {
 
 input {
     background-color: var(--bg-color);
+    color: var(--text-color);
+    box-sizing: border-box;
+    border: 2px solid var(--bg-color-light);
+    line-height: 1em;
+    padding: 1rem 0 1rem 1rem;
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    font-family: 'baloo bhai 2';
+    font-weight: 600;
+    font-size: 16px;
 }
 
 input[type="checkbox"] {
@@ -152,19 +163,6 @@ button:not(.remove-item), .btn {
     min-width: 80%;
 }
 
-input {
-    box-sizing: border-box;
-    border: 2px solid var(--bg-color-light);
-    line-height: 1em;
-    padding: 1rem 0 1rem 1rem;
-    background-color: var(--bg-color);
-    border-radius: 20px;
-    margin-bottom: 1.5rem;
-    font-family: 'baloo bhai 2';
-    font-weight: 600;
-    font-size: 16px;
-}
-
 input[type="date"] {
     color: var(--text-color);
 }
@@ -215,6 +213,9 @@ form .order {
 
 .date-input::before {
     content: 'Abholtermin vereinbaren';
+    display: block;
+    width: 200%;
+    word-break: keep-all;
 }
 
 .date-input:valid::before {
