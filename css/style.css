@@ -61,7 +61,7 @@
 ::-webkit-scrollbar-track {
     background: #f0f0f0; /* Farbe des Tracks */
     border-radius: 20px; /* Abgerundete Ecken */
-    height: 95%;
+    height: 25%;
 }
 
 /* Daumen der Scrollleiste */
