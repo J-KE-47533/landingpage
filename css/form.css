@@ -213,7 +213,16 @@ form .order {
     padding-right: 1rem;
 }
 
-::-webkit-calendar-picker-indicator {
+.date-input::-webkit-datetime-edit {
+    color: transparent; /* Versteckt den Standard-Text */
+}
+
+.date-input::-webkit-inner-spin-button,
+.date-input::-webkit-calendar-picker-indicator {
+    display: none; /* Entfernt die Pfeile und das Kalender-Symbol */
+}
+
+/* ::-webkit-calendar-picker-indicator {
     position: relative;
     z-index: 1;
     opacity: 0.7;
@@ -223,7 +232,7 @@ form .order {
 
 ::-webkit-calendar-picker-indicator:hover {
     opacity: 0.4;
-}
+} */
 
 input[type="checkbox"]:not([id="datenschutz"]) {
     appearance: none; /* Entfernt das Standard-Checkbox-Design */
