@@ -335,5 +335,3 @@ document.querySelectorAll('h2').forEach(h2 => {
             merkzettel.style.right = updateMerkzettelPosition();
         }
     });
-
-    

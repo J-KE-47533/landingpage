@@ -213,26 +213,32 @@ form .order {
     padding-right: 1rem;
 }
 
+.date-input::before {
+    content: 'Abholtermin vereinbaren';
+}
+
+.date-input:valid::before {
+    content: '';
+}
+
 .date-input::-webkit-datetime-edit {
-    color: transparent; /* Versteckt den Standard-Text */
+    display: none;
+}
+
+.date-input:valid::-webkit-datetime-edit {
+    display: block;
+    color: var(--text-color);
 }
 
 .date-input::-webkit-inner-spin-button,
 .date-input::-webkit-calendar-picker-indicator {
-    display: none; /* Entfernt die Pfeile und das Kalender-Symbol */
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0;
 }
 
-/* ::-webkit-calendar-picker-indicator {
-    position: relative;
-    z-index: 1;
-    opacity: 0.7;
-    cursor: pointer;
-    transition: 0.3s;
-}
 
-::-webkit-calendar-picker-indicator:hover {
-    opacity: 0.4;
-} */
 
 input[type="checkbox"]:not([id="datenschutz"]) {
     appearance: none; /* Entfernt das Standard-Checkbox-Design */
@@ -384,6 +390,11 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     border-color: #FFA07A;
 }
 
+#section-2 select:hover {
+    color: var(--bg-color);
+    background-color: #FFA07A;
+}
+
 #section-2::-webkit-scrollbar-thumb:hover {
     background: #ffceba; /* Farbe des Daumens */
 }
@@ -391,6 +402,7 @@ input[type="checkbox"]:not([id="datenschutz"]) {
 #section-2::-webkit-scrollbar-thumb {
     background: #FFA07A; /* Farbe beim Hover */
 }
+
 
 
 /* Section 3 */ 
@@ -418,6 +430,11 @@ input[type="checkbox"]:not([id="datenschutz"]) {
 
 #section-3 select{
     border-color: var(--accent-color);
+}
+
+#section-3 select:hover {
+    color: var(--bg-color);
+    background-color: var(--accent-color);
 }
 
 #section-3::-webkit-scrollbar-thumb:hover {
@@ -454,6 +471,11 @@ input[type="checkbox"]:not([id="datenschutz"]) {
 
 #section-4 select{
     border-color: var(--main-color);
+}
+
+#section-4 select:hover {
+    color: var(--bg-color);
+    background-color: var(--main-color);
 }
 
 #section-4::-webkit-scrollbar-thumb:hover {
@@ -493,6 +515,11 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     border-color: #9DA977;
 }
 
+#section-5 select:hover {
+    color: var(--bg-color);
+    background-color: #9DA977;
+}
+
 #section-5::-webkit-scrollbar-thumb:hover {
     background: #cedca0; /* Farbe des Daumens */
 }
@@ -527,6 +554,11 @@ input[type="checkbox"]:not([id="datenschutz"]) {
 
 #section-6 select{
     border-color: #c4bc98;
+}
+
+#section-6 select:hover {
+    color: var(--bg-color);
+    background-color: #c4bc98;
 }
 
 #section-6::-webkit-scrollbar-thumb:hover {

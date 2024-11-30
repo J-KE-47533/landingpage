@@ -84,12 +84,13 @@ iframe {
 }
 
 .collapser-content {
-
     opacity: 0; /* Start mit Transparenz */
     max-height: 0; /* Start mit maximaler Höhe von 0 */
-    overflow: hidden; /* Verhindert, dass der Inhalt sichtbar wird */
-    transition: max-height 0.3s ease; /* Übergang für max-height und opacity */
+    /* overflow: hidden; Verhindert, dass der Inhalt sichtbar wird */
+    transition: 0.3s ease; /* Übergang für max-height und opacity */
     margin-top: 10px; /* optional, um Platz zu schaffen */
+    position: relative;
+    z-index: 999999;
   }
   
   .collapser-content.open {
