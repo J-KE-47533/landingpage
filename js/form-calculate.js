@@ -153,7 +153,7 @@ const updateOrderSummary = () => {
             listItemTitle.textContent = `${name} (${weight} g)`;
 
             const removeButton = document.createElement('button');
-            removeButton.innerHTML = '<div class="removeBtn></div>"';
+            removeButton.textContent = 'x';
             removeButton.classList.add('remove-item');
             removeButton.title = 'Diesen Artikel entfernen';
 

@@ -297,10 +297,7 @@ span.price::after {
     color: darkred;
 }
 
-.form-field .order .bestelluebersicht {
-    max-height: 6.2rem;
-    overflow-y: auto;
-}
+
 
 
 
@@ -320,6 +317,13 @@ span.price::after {
 
     .bestell-container {
         border-top-left-radius: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .form-field .order .bestelluebersicht {
+        max-height: 6.2rem;
+        overflow-y: auto;
     }
 }
 
