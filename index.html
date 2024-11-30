@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/helper.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/form-error.css">
+    <link rel="stylesheet" href="css/merkzettel.css">
 
 </head>
 
@@ -1212,7 +1213,7 @@
                     </div>
 
                     <div class="row form-container center" id="section-6">
-                        <div class="col-10 form-section">
+                        <div class="col medium-col-11 large-col-10 form-section">
                             <div class="collapser-container">
                                 <div class="collapser-btn" >Pflanzliche Milchalternativen</div>
                                 <div class="collapser-content">
@@ -1402,7 +1403,11 @@
                                         <div class="bestelluebersicht">
                                             <div class="order-summary">Keine Artikel ausgewählt</div>
                                             <div class="summe">
-                                                <div>Gesamt:</div><div class="total-price">0.00 €</div>
+                                                <div class="weights">
+                                                    <div class="use"></div>
+                                                    <div class="free"></div>
+                                                </div>
+                                                <div>Gesamtsumme:</div><div class="total-price">0.00 €</div>
                                             </div>
                                             <div class="btn clear-selection">Auswahl entfernen</div>
                                         </div>
@@ -1439,7 +1444,9 @@
             <img src="./images/zettel.png" alt="Merkzettel">
             <span class="item-count-badge" id="item-count-badge">0</span>
         </div>
+       
         <div class="bestlluebersicht-container" id="bestelluebersicht">
+            <img id="merkzettel-close-btn" class="merkzettel-close-btn" src="./images/icons/zettel-close.svg" alt="Merkzettel schließen">
             <div class="bestell-container">
                 <h2>Bestellübersicht:</h2>
 
