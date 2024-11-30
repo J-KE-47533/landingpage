@@ -345,6 +345,13 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     cursor: pointer;
 }
 
+/* Section 1 */
+
+#section-1 select:hover, #section-1 select:focus, #section-1 select:checked {
+    color: var(--bg-color);
+    background-color: var(--bg-color-light);
+}
+
 /* Section 2 */
 
 #section-2 {

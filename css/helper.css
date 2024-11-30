@@ -92,7 +92,7 @@ iframe {
   }
   
   .collapser-content.open {
-    max-height: 500px; /* Maximale Höhe, die den gesamten Inhalt abdeckt */
+    max-height: 1500px; /* Maximale Höhe, die den gesamten Inhalt abdeckt */
     opacity: 1; /* Inhalt wird sichtbar */
   }
 
