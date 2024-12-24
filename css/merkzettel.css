@@ -2,7 +2,7 @@
     display: flex;
     position: fixed;
     right: calc(-100% + 42.48px);
-    top: 6rem;
+    top: 4rem;
     z-index: 9999999999999;
     transition: 0.3s;
     font-weight: 600;
@@ -37,7 +37,7 @@
     right: 0;
     background-color: var(--bg-color);
     height: 90%;
-    max-height: 63%;
+    max-height: 76%;
     padding: 3.5rem 2rem;
     border-bottom-left-radius: 25px;
     border-top-left-radius: 25px;
@@ -278,6 +278,7 @@ span.price::after {
 .order-summary {
     max-height: 7rem;
     overflow: auto;
+    min-height: 5rem;
 }
 
 .order .order-summary {
@@ -337,6 +338,7 @@ span.price::after {
     .order .bestelluebersicht {
         padding: 1.3rem 2rem 3.2rem 2rem;
     }
+    
 }
 
 @media screen and (min-width: 1640px) {

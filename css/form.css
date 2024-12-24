@@ -17,6 +17,9 @@ form {
     display: none !important;
     text-align: left !important;
     max-width: 100% !important;
+}
+
+.form-section {
     height: 29.5rem;
     overflow-y: auto;
 }
@@ -33,7 +36,7 @@ input::placeholder {
     color: var(--text-color);
 }
 
-input {
+input, textarea {
     background-color: var(--bg-color);
     color: var(--text-color);
     box-sizing: border-box;
@@ -182,7 +185,9 @@ form .order {
     cursor: unset;
 }
     
-
+.pickup {
+    display: flex;
+}
 
 .date-input {
     appearance: none; /* Standard-Aussehen entfernen */
@@ -214,6 +219,38 @@ form .order {
 
 .date-input::-webkit-inner-spin-button,
 .date-input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+}
+
+.time-input {
+    margin-left: 0.5rem;
+}
+
+.time-input::before {
+    content: 'Uhrzeit auswählen';
+    display: block;
+    width: 200%;
+    word-break: keep-all;
+}
+
+.time-input:valid::before {
+    content: '';
+}
+
+.time-input::-webkit-datetime-edit {
+    display: none;
+}
+
+.time-input:valid::-webkit-datetime-edit {
+    display: block;
+    color: var(--text-color);
+}
+
+.time-input::-webkit-inner-spin-button,
+.time-input::-webkit-calendar-picker-indicator {
     position: absolute;
     left: 0;
     width: 100%;
@@ -385,11 +422,11 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     background-color: #FFA07A;
 }
 
-#section-2::-webkit-scrollbar-thumb:hover {
+#section-2 .form-section::-webkit-scrollbar-thumb:hover {
     background: #ffceba; /* Farbe des Daumens */
 }
 
-#section-2::-webkit-scrollbar-thumb {
+#section-2 .form-section::-webkit-scrollbar-thumb {
     background: #FFA07A; /* Farbe beim Hover */
 }
 
@@ -427,11 +464,11 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     background-color: var(--accent-color);
 }
 
-#section-3::-webkit-scrollbar-thumb:hover {
+#section-3 .form-section::-webkit-scrollbar-thumb:hover {
     background: #ff9389; /* Farbe des Daumens */
 }
 
-#section-3::-webkit-scrollbar-thumb {
+#section-3 .form-section::-webkit-scrollbar-thumb {
     background: var(--accent-color); /* Farbe beim Hover */
 }
 
@@ -468,11 +505,11 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     background-color: var(--main-color);
 }
 
-#section-4::-webkit-scrollbar-thumb:hover {
+#section-4 .form-section::-webkit-scrollbar-thumb:hover {
     background: #b09485; /* Farbe des Daumens */
 }
 
-#section-4::-webkit-scrollbar-thumb {
+#section-4 .form-section::-webkit-scrollbar-thumb {
     background: var(--main-color); /* Farbe beim Hover */
 }
 
@@ -510,11 +547,11 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     background-color: #9DA977;
 }
 
-#section-5::-webkit-scrollbar-thumb:hover {
+#section-5 .form-section::-webkit-scrollbar-thumb:hover {
     background: #cedca0; /* Farbe des Daumens */
 }
 
-#section-5::-webkit-scrollbar-thumb {
+#section-5 .form-section::-webkit-scrollbar-thumb {
     background: #9DA977; /* Farbe beim Hover */
 }
 
@@ -551,11 +588,11 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     background-color: #c4bc98;
 }
 
-#section-6::-webkit-scrollbar-thumb:hover {
+#section-6 .form-section::-webkit-scrollbar-thumb:hover {
     background: #F3EAC2; /* Farbe des Daumens */
 }
 
-#section-6::-webkit-scrollbar-thumb {
+#section-6 .form-section::-webkit-scrollbar-thumb {
     background: #c4bc98; /* Farbe beim Hover */
 }
 
@@ -567,7 +604,7 @@ input[type="checkbox"]:not([id="datenschutz"]) {
     border-top: none;
 }
 
-#section-7 input{
+#section-7 input, textarea{
     border-color: #8B5E3C;
 }
 
@@ -576,6 +613,14 @@ input[type="checkbox"]:not([id="datenschutz"]) {
 }
 
 #section-7::-webkit-scrollbar-thumb {
+    background: #8B5E3C; /* Farbe beim Hover */
+}
+
+#section-7 .form-section::-webkit-scrollbar-thumb:hover {
+    background: #d89663; /* Farbe des Daumens */
+}
+
+#section-7 .form-section::-webkit-scrollbar-thumb {
     background: #8B5E3C; /* Farbe beim Hover */
 }
 

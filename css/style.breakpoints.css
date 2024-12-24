@@ -92,37 +92,105 @@ form h2 {
 }
 
 h2.h2-active {
-    display: block;
+    display: flex;
     width: 100%;
     text-align: center;
 }
 
-#h2-1::before {
-    content: '1';
+.h2-section h2, .popup-content h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#h2-2::before {
-    content: '2';
+
+.h2-active::before {
+    white-space: nowrap; 
+    transition: 0.3s;
 }
 
-#h2-3::before {
-    content: '3';
+#h2-1.h2-active::before {
+    content: 'Basis';
 }
 
-#h2-4::before {
-    content: '4';
+#h2-2.h2-active::before {
+    content: 'Obst';
 }
 
-#h2-5::before {
-    content: '5';
+#h2-3.h2-active::before {
+    content: 'Nüsse';
 }
 
-#h2-6::before {
-    content: '6';
+#h2-4.h2-active::before {
+    content: 'Superfoods';
 }
 
-#h2-7::before {
-    content: '7';
+#h2-5.h2-active::before {
+    content: 'Schoko & Extras';
+}
+
+#h2-6.h2-active::before {
+    content: 'Milch';
+}
+
+#h2-7.h2-active::before {
+    content: 'Kontaktdaten';
+}
+
+h2 span {
+    background-size: cover;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-left: 0.5rem;
+}
+
+h2.h2-active span {
+    margin-left: 1rem;
+}
+
+#h2-1 span {
+    background-image: url(../images/icons/icon-basis.svg);
+    left: 60%;
+
+}
+
+#h2-2 span {
+    background-image: url(../images/icons/icon-obst.svg);
+    left: 58%;
+    width: 3.5rem;
+}
+
+#h2-3 span {
+    background-image: url(../images/icons/icon-nuesse.svg);
+    left: 62%;
+}
+
+#h2-4 span {
+    background-image: url(../images/icons/icon-superfoods.svg);
+    left: 68%;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+#h2-5 span {
+    background-image: url(../images/icons/icon-schoki.svg);
+    left: 72%;
+}
+
+#h2-6 span {
+    background-image: url(../images/icons/icon-milch.svg);
+    left: 60%;
+}
+
+#h2-7 span {
+    background-image: url(../images/icons/icon-kontakt.png);
+    left: 60%;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-left: 0;
+}
+
+.h2-active#h2-7 span {
+    margin-left: 1rem;
 }
 
 .form-section {
@@ -192,8 +260,18 @@ button:not(.remove-item), .btn {
     margin: 0;
 }
 
-.btn-back span, .btn-next span, .btn-submit span {
+.btn-back span, .btn-next span {
     display: none;
+}
+
+.btn-submit {
+    height: 0;
+    display: flex;
+    align-items: center;
+}
+
+.btn-submit span {
+    margin-right: 1rem;
 }
 
 .btn-next::before, .btn-back::before, .btn-submit::before {
@@ -209,6 +287,14 @@ button:not(.remove-item), .btn {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.btn-submit::before {
+    right: 1.2em;
+    left: unset;
+    width: 9px;
+}
+
+
 
 .btn-back::before {
     background-image: url(../images/icons/btn-back.svg);
@@ -234,6 +320,43 @@ button:not(.remove-item), .btn {
     background-image: url(../images/icons/btn-next.svg);
 }
 
+
+/* Anfahrt */
+
+body.anfahrt input {
+    width: 100%;
+}
+
+body.anfahrt .form-container, body.kontakt .form-container {
+    display: flex !important;
+    border: 2px solid var(--bg-color-light) !important;
+    border-radius: 20px !important;
+    height: unset;
+    padding: 3rem 0;
+}
+
+body.kontakt input, body.kontakt textarea {
+    border-color: var(--bg-color-light) !important;
+}
+
+body.kontakt input[id="datenschutz"]:before {
+    background-color: var(--bg-color-light) !important;
+}
+
+body.kontakt textarea[id="nachricht"] {
+    height: 10rem;
+    width: 100%; /* Passt die Breite an den Container an */
+    resize: vertical; /* Erlaubt dem Nutzer, die Höhe zu ändern */
+    overflow-wrap: break-word; /* Bricht Wörter, die zu lang sind */
+    overflow-x: hidden; /* Verhindert horizontalen Scrollbalken */
+    padding: 10px; /* Innerer Abstand für besseren Textabstand */
+    box-sizing: border-box; /* Enthält Padding und Border in der Breite */
+}
+
+body.kontakt .form-section {
+    height: unset;
+}
+ 
 /* Small */
 
 @media screen and (min-width:640px) {
@@ -251,7 +374,7 @@ button:not(.remove-item), .btn {
 @media screen and (min-width:760px) {
 
     header {
-        height: 85vh;
+        height: 100vh;
     }
 
     .btn-header {
@@ -315,6 +438,10 @@ button:not(.remove-item), .btn {
         padding: 0.7rem 1.3rem !important;
     }
 
+    .btn-submit {
+        height: unset;
+    }
+
     .btn-back span, .btn-next span, .btn-submit span {
         display: block;
     }
@@ -332,6 +459,15 @@ button:not(.remove-item), .btn {
 
     .btn-back::before {
         content: none;
+    }
+
+    body.kontakt input[id="nachricht"] {
+        height: 14.6rem;
+        margin-bottom: 0;
+    }
+
+    body.kontakt .button-container {
+        justify-content: flex-end !important;
     }
 }
 
@@ -353,13 +489,18 @@ button:not(.remove-item), .btn {
         background-size: 100%;
     }
 
+    h2 span {
+        display: block;
+    }
+
     .h2-section {
         justify-content: space-between;
     }
     .h2-section h2 {
-        display: block;
+        display: flex;
         width: 6.94rem;
         text-align: center;
+        max-height: 2rem;
     }
 
     h2:after {
@@ -417,7 +558,35 @@ button:not(.remove-item), .btn {
     #h2-7:hover, #h2-7:hover:after {
         background-color: #d89663;
     }
+    
 
+    #h2-1::before, #h2-1.h2-active::before {
+        content: none;
+    }
+    
+    #h2-2::before, #h2-2.h2-active::before {
+        content: none;
+    }
+    
+    #h2-3::before, #h2-3.h2-active::before {
+        content: none;
+    }
+    
+    #h2-4::before, #h2-4.h2-active::before {
+        content: none;
+    }
+    
+    #h2-5::before, #h2-5.h2-active::before {
+        content: none;
+    }
+    
+    #h2-6::before,#h2-6.h2-active::before  {
+        content: none;
+    }
+    
+    #h2-7::before, #h2-7.h2-active::before {
+        content: none;
+    }
     .date-input {
         min-height: 61.6px;
     }
@@ -425,6 +594,8 @@ button:not(.remove-item), .btn {
 }
 
 @media screen and (max-width: 1363px) {
+
+
     #h2-1:hover, #h2-1:hover:after, #h2-1.h2-active, #h2-1.h2-active:after {
         background-color: var(--bg-color-light) !important;
     }
@@ -484,55 +655,80 @@ button:not(.remove-item), .btn {
 @media screen and (min-width:1364px) {
     
 
+    #h2-1 span {
+        left: 50%;
+    }
 
     .h2-active {
         width: 21.7rem !important;
-        padding-left: 2.7rem;
+        padding-left: 3rem;
+                justify-content: flex-start;
       }
     
     .h2-active::before {
-        position: absolute;
-        left: 4rem;
-        white-space: nowrap; 
-        transition: 0.3s;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        display: flex;
-        align-items: center;
+        left: 6rem;
+        justify-content: unset;
+
     }
     
     #h2-1.h2-active::before {
-        content: '1 - Basis';
+        content: 'Basis';
     }
     
     #h2-2.h2-active::before {
-        content: '2 - Obst';
+        content: 'Obst';
     }
     
     #h2-3.h2-active::before {
-        content: '3 - Nüsse';
+        content: 'Nüsse';
     }
     
     #h2-4.h2-active::before {
-        content: '4 - Superfoods';
+        content: 'Superfoods';
     }
     
     #h2-5.h2-active::before {
-        content: '5 - Schoko & Extras';
+        content: 'Schoko & Extras';
     }
     
     #h2-6.h2-active::before {
-        content: '6 - Milch';
+        content: 'Milch';
     }
     
     #h2-7.h2-active::before {
-        content: '7 - Kontaktdaten';
+        content: 'Kontaktdaten';
     }
 
     .h2-section {
         overflow: hidden;
+    }
+
+    .h2-active span {
+        display: block;
+    }
+    
+    #h2-1 span {
+        left: 12rem;
+    
+    }
+    
+    #h2-2 span {
+        left: 11.5rem;
+    }
+    
+    #h2-3 span {
+        left: 13rem;
+    }
+    
+    #h2-4 span {
+        left: 18rem;
+    }
+    #h2-5 span {
+        left: 21.5rem;
+    }
+    
+    #h2-6 span {
+        left: 12rem;
     }
 
     .form-over-container {
@@ -540,6 +736,12 @@ button:not(.remove-item), .btn {
     }
 
 
+    /* Anfahrt  */
+
+    body.anfahrt header, body.kontakt header {
+        max-height: 40vh !important;
+        background-position: center 40% !important;
+    }
 }
 
 

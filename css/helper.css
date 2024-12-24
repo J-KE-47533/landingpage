@@ -84,16 +84,20 @@ iframe {
 }
 
 .collapser-content {
-    opacity: 0; /* Start mit Transparenz */
-    max-height: 0; /* Start mit maximaler Höhe von 0 */
-    /* overflow: hidden; Verhindert, dass der Inhalt sichtbar wird */
-    transition: 0.3s ease; /* Übergang für max-height und opacity */
-    margin-top: 10px; /* optional, um Platz zu schaffen */
+    display: none;
+    opacity: 0; 
+    max-height: 0;
+    transition: 0.3s ease; 
+    margin-top: 10px; 
+    position: relative;
+    z-index: 999;
   }
   
   .collapser-content.open {
-    max-height: 1500px; /* Maximale Höhe, die den gesamten Inhalt abdeckt */
-    opacity: 1; /* Inhalt wird sichtbar */
+    display: block;
+    max-height: 1500px; 
+    opacity: 1; 
+
   }
 
 .collapser-btn.open::after {
